@@ -1,0 +1,143 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+ 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+
+}
+
+/* Kolommen */
+.foto {
+  width: 100%;
+  position: relative;
+}
+
+.foto img {
+  width: 75%;
+  margin-top: 50px;
+}
+
+ 
+.rechts {
+  margin-top: 60px;
+}
+
+
+
+/* Product Prijs */
+.product-prijs {
+  display: inline-flex;
+  text-align: right;
+  align-items: center;
+  font-size: 20px;
+  letter-spacing: 1px;
+  background: #C0C0C0;
+  border-radius: 9px;
+  height: 40px;
+  width: 70px;
+  box-shadow: 0px 0px 3px 0px;
+
+}
+
+.product-prijs:hover{
+  transform: scale(1.1);
+  transition: .5s;
+}
+ 
+.product-prijs span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #43474D;
+  padding-left: 10px;
+  
+}
+ 
+.cart-btn {
+  display: inline-block;
+  background-color: #FFD700;
+  border-radius: 9px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all .5s;
+  margin-left: 50px;
+  box-shadow: 0px 0px 3px 0px #000000; 
+  margin-top: 50px;
+
+}
+
+.cart-btn:hover {
+  background-color: #FF8C00;
+  transform: scale(1.1);
+}
+
+
+
+/* Product Description */
+.product-description {
+  border-bottom: 1px solid #000000;
+  margin-bottom: 20px;
+}
+.product-description a {
+  font-size: 12px;
+  color: #000000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.product-description h1 {
+  font-weight: 200;
+  font-size: 52px;
+  color: #43484D;
+  letter-spacing: 2px;
+}
+.beschrijving {
+  font-size: 15px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+
+
+/* Cable Configuration */
+.anderen {
+  margin-bottom: 50px;
+  font-size: 18px;
+  text-align: right;
+}
+ 
+.anderen button {
+  margin-top: 40px;
+  border: 2px solid #E1E8EE;
+  border-radius: 6px;
+  padding: 13px 20px;
+  font-size: 16px;
+  color: #5E6977;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all .5s;
+}
+ 
+.anderen button:hover,
+.anderen button:active,
+.anderen button:focus {
+  border: 2px solid #86939E;
+  outline: none;
+
+}
+ 
+.product-rating{
+    font-size: 20px;
+    margin-top: 175px;
+}
+.product-rating i.grey{
+    color: #acacab;
