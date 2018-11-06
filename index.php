@@ -3,39 +3,34 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <style type="text/css">
-            .sorteer-op{
-                float: right;
-                border-radius: 25px;
-            }
-        </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
     <body>
-        <form name='Sorteer' method='post' action='sorteer.php'>
-            
-        </form>
         <form name='Searchbar' method='get' action='searchresults.php'>
             <input name='search' type='text'/>
             <input type='submit' name='submit' value='Search'/>
         </form>
-        <form name='prijs' ></form>
+            <select>
+               
+               <?php 
+                require('connect.php');
+                $category = getGroup();
+                while ($group = $category->fetch()){
+                    echo'<option>'.$group['StockGroupName'].'</option>';
+                }
+                ?>
+            </select>
+        
 <?php
-        $db ="mysql:host=localhost;dbname=wideworldimporters;port=3306";
-        $user = "root";
-        $pass = "";
-        $pdo = new PDO($db, $user, $pass);
-        $stmt = $pdo->prepare("SELECT * FROM stockgroups");
-        $stmt->execute();
-        $list = array();
-        while ($row = $stmt->fetch()){
-            $category = $row["StockGroupName"];
-            array_push($list, $category);  
+       
+        $result = getStock();
+        echo "<div class='productshow'><table>";
+        echo '<th>Product</th> <th>prijs</th>';
+        while($row = $result->fetch()){
+            echo '<tr> <td>'. $row['StockItemName']. '</td><td>'. $row['UnitPrice']. '</td> <td><input type="button" name="Bestel" action="detail.php" value="Bestel"></td></tr>';
         }
-        echo" <div class='product-display'> <select name='category'>";
-        foreach ($list as $item) {
-            echo '<option>'.$item.'</option>';
-        }
-        echo"</select> </div>";   
+        echo'</table></div>';
+        
 ?>
 
          
