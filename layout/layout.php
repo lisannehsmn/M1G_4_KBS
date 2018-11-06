@@ -9,7 +9,7 @@
 
 <nav class="navbar navbar-toggleable-md bg-dark">
   <a class="navbar-brand" href="#"><img src="wwi.png" width="160" height="48" class="d-inline-block align-top" alt=""></a>
-  <button type="button" class="button-style btn btn-warning btn-sm text-white">Login</button>
+  <button type="button" class="button-style btn btn-warning btn-sm text-white">Inloggen</button>
 </nav>
     
     
