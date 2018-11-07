@@ -28,13 +28,30 @@ $cart = new Cart;
 </head>
 <body>
     <nav class="navbar navbar-toggleable-md bg-dark">
-        <a class="navbar-brand" href="#"><img src="wwi.png" width="160" height="48" class="d-inline-block align-top" alt=""></a>
-        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php">Home</a></li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href="moreproduct.php">Inloggen</a></li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href="viewCart.php">winkelwagen</a></li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href="contact-us.php">Contact</a></li>
-        <a href="viewCart.php" class="cart-link" title="View Cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-    </nav>
+            <a class="navbar-brand" href="#"><img src="wwi.png" width="160" height="48" class="d-inline-block align-top" alt=""></a>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="index.php">Producten</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Inloggen</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" href="viewCart.php">winkelwagen</a></li>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorie</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="Items.php">Novelty Items</a>
+                    <a class="dropdown-item" href="Clothing.php">Clothing</a>
+                    <a class="dropdown-item" href="Mugs.php">Mugs</a>
+                    <a class="dropdown-item" href="T.php">T-shirts</a>
+                    <a class="dropdown-item" href="Airline.php">Airline Novelties</a>
+                    <a class="dropdown-item" href="Computing.php">Computing Novelties</a>
+                    <a class="dropdown-item" href="USB.php">USB Novelties</a>
+                    <a class="dropdown-item" href="Furry.php">Furry Footwear</a>
+                    <a class="dropdown-item" href="Toys.php">Toys</a>
+                    <a class="dropdown-item" href="Pack.php">Packaging Materials</a>
+                </div>
+          </div>
+            <form name="search" method="get" action="searchresults.php">
+                <input name="search" value="search"/>
+                <input type="submit" action="searchresults.php" value="search"/>
+            </form>
+        </nav>
 <div class="container">
     <h1>Winkelwagen</h1>
     <table class="table">
