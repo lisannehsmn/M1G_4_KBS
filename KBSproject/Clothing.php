@@ -78,7 +78,7 @@
                             <a class="btn btn-success" href="cartAction.php?action=addToCart&id=<?php echo $row["StockItemID"]; ?>">In winkelmand</a>
                         </div>
                         <div class="col-md-6">
-                           <a class="btn btn-info" href="cartAction.php?action=addToCart&id=<?php echo $row["StockItemID"]; ?>">Details</a>
+                           <a class="btn btn-info" href="detail.php?action=&id=<?php echo $row["StockItemID"]; ?>">Details</a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
     </div>
     </div>
          <footer class="footer small text-center">
-            <div class="container">
+            <div class="footer">
                 Copyright © Wide World Importers 2018
             </div>
         </footer>
