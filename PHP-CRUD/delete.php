@@ -33,7 +33,7 @@
     <div class="row">
         <form class="form-horizontal" action="delete.php" method="post">
             <input type="hidden" name="StockItemID" value="<?php echo $id; ?>">
-            <p class="bg-danger alert">Weet je het zeker dat je de product wilt verwijderen?</p>
+            <p class="bg-danger alert">Weet je het zeker dat je het product wilt verwijderen?</p>
             <div class="form-group">
                 <div class="col-sm-12 text-center">
                     <button type="submit" class="btn btn-danger">Ja</button>
