@@ -32,19 +32,20 @@ include("regconnection.php");
                             <!--Hier ga je de registratie naast login zetten-->
     <br><br><br><br> 
             <form method="post" name="register">
+                <?php include('errors.php');?>
             <h2>Schrijf je in!</h2>
     <div class="input-group">
-        <label for="name">Volledige naam</label>
+        <label for="name">Volledige naam*</label>
         <input type="text" name="name" class="textInput" placeholder="Naam en achternaam">
     </div>
     
     <div class="input-group">
-        <label for="email">Email</label> 
+        <label for="email">Email*</label> 
         <input type="email" name="email" class="textInput" placeholder="Email">
     </div>
     
     <div class="input-group">
-    <label for="address">Adres</label>
+    <label for="address">Adres*</label>
         <input type="text" name="address" class="textInput" placeholder="Adres">
     </div>
     
@@ -54,17 +55,17 @@ include("regconnection.php");
     </div>
             
     <div class="input-group">
-        <label for="password">Wachtwoord</label>
+        <label for="password">Wachtwoord*</label>
         <input type="password" name="password" class="textInput" placeholder="Wachtwoord">
     </div>
     
     <div class="input-group">
-        <label for="password2">Wachtwoord</label>
+        <label for="password2">Wachtwoord*</label>
         <input type="password" name="password2" class="textInput" placeholder="Herhaal wachtwoord">
     </div>
-    
+    <p>Alle velden zijn verplicht met *</p>    
             <div class="input-group">
-                <button type="submit" class="btn btn-success" name="register_btn">Registreer</button>
+                <button type="submit" class="btn btn-success" name="register_btn" id="register_btn">Registreer</button>
     </div>
         </form>
         </div>

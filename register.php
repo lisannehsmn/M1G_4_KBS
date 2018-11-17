@@ -42,8 +42,11 @@ include 'regconnection.php';
         <input type="password" name="password2" class="textInput" placeholder="Herhaal wachtwoord">
     </div>
     
-            <div class="input-group">
-                <button type="submit" class="btn btn-success" name="register_btn">Registreer</button>
+<div class="alert alert-success" role="alert">
+  This is a success alert—check it out!
+</div>
+            <div class="alert alert-success" role="alert">
+                <button type="submit" class="btn btn-success" name="register_btn" >Registreer</button>
     </div>
         </form>
     </body>
