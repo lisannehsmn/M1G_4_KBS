@@ -29,7 +29,7 @@ if (isset($_POST['login_btn'])){
         $con = null;
         if ($result){
             $_SESSION['login_btn'] = $data;
-            header("location: viewCart.php"); 
+            header("location: https://www.ideal.nl/"); 
         }else{
             print("Incorrecte login details");
         }

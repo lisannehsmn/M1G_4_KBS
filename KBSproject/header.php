@@ -48,13 +48,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-white" href="#">HOME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-white" href="index.php">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="index.php">PRODUCTEN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="Login.php">INLOGGEN</a>
+                    <a class="nav-link text-white" href="loginregister.php">INLOGGEN</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="viewCart.php">WINKELWAGEN</a>

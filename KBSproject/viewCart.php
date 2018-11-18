@@ -28,7 +28,7 @@ $cart = new Cart;
 </head>
 <body>
     <nav class="navbar navbar-toggleable-md bg-dark">
-            <a class="navbar-brand" href="#"><img src="wwi.png" width="160" height="48" class="d-inline-block align-top" alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="wwi.png" width="160" height="48" class="d-inline-block align-top" alt=""></a>
             <li class="nav-item" role="presentation"><a class="nav-link" href="index.php">Producten</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" href="Login.php">Inloggen</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" href="viewCart.php">winkelwagen</a></li>
@@ -90,7 +90,7 @@ $cart = new Cart;
             <td colspan="2"></td>
             <?php if($cart->total_items() > 0){ ?>
             <td class="text-center"><strong>Total <?php echo '€'.$cart->total().' EURO'; ?></strong></td>
-            <td><a href="https://www.ideal.nl/" class="btn btn-success btn-block">Bestellen <i class="glyphicon glyphicon-menu-right"></i></a></td>
+            <td><a href="loginregister.php" class="btn btn-success btn-block">Verder <i class="glyphicon glyphicon-menu-right"></i></a></td>
             <?php } ?>
         </tr>
     </tfoot>
