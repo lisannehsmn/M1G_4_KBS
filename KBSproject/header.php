@@ -5,6 +5,9 @@
         <meta charset="UTF-8">
         <title></title>
         <style>
+             body {
+                padding-top: 50px;
+            }
             .button-style
             {
                 border-radius: 0 !important;
@@ -36,8 +39,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand" href="index.php"><img src="wwi.png" width="160" height="48" class="d-inline-block align-top" alt=""></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+        <a class="navbar-brand" href="index.php"><img src="WWI.png" width="160" height="48" class="d-inline-block align-top" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
