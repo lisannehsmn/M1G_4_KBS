@@ -14,9 +14,11 @@ class Cart {
     public function contents(){
         // herschik eerst de nieuwste
         $cart = array_reverse($this->cart_contents);
+
         // verwijder deze zodat ze geen probleem vormen bij het tonen van de kartafel
         unset($cart['total_items']);
         unset($cart['cart_total']);
+
         return $cart;
     }
     
@@ -41,7 +43,7 @@ class Cart {
         if(!is_array($item) OR count($item) === 0){
             return FALSE;
         }else{
-            if(!isset($item['id'], $item['name'], $item['price'], $item['qty'])){
+            if(!isset($item['StockItemID'], $item['name'], $item['price'], $item['qty'])){
                 return FALSE;
             }else{
               
@@ -52,7 +54,7 @@ class Cart {
                 // prijs
                 $item['price'] = (float) $item['price'];
                 // maak een unieke ID voor het item dat in het winkelwagentje wordt ingevoegd
-                $rowid = md5($item['id']);
+                $rowid = md5($item['StockItemID']);
                 // verkrijg de hoeveelheid als deze er al is en voeg deze toe
                 $old_qty = isset($this->cart_contents[$rowid]['qty']) ? (int) $this->cart_contents[$rowid]['qty'] : 0;
                 // maak de invoer opnieuw met unieke ID en bijgewerkte hoeveelheid
@@ -94,7 +96,7 @@ class Cart {
                     $item['price'] = (float) $item['price'];
                 }
                 // product-ID & naam moeten niet worden gewijzigd
-                foreach(array_diff($keys, array('id', 'name')) as $key){
+                foreach(array_diff($keys, array('StockItemID', 'name')) as $key){
                     $this->cart_contents[$item['rowid']][$key] = $item[$key];
                 }
                 $this->save_cart();
@@ -133,6 +135,7 @@ class Cart {
         $this->save_cart();
         return TRUE;
      }
+
     public function destroy(){
         $this->cart_contents = array('cart_total' => 0, 'total_items' => 0);
         unset($_SESSION['cart_contents']);

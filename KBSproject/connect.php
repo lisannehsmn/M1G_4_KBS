@@ -9,7 +9,6 @@ function dbGetConfig(){
     'pass' => ""
     );
 }
-
 function dbSelectAll($sql){
     $dbconfig= dbGetConfig();
     $pdo = new PDO($dbconfig['db'], $dbconfig['user'], $dbconfig['pass']);
@@ -18,7 +17,6 @@ function dbSelectAll($sql){
     $pdo = null;
     return $stmt;
 }
-
 function dbSelect($sql, $waardes){
     $dbconfig= dbGetConfig();
     $pdo=new PDO($dbconfig['db'], $dbconfig['user'], $dbconfig['pass']);
@@ -43,4 +41,6 @@ function getProduct(){
     $sql = "SELECT * FROM stockitems ORDER BY StockItemID DESC LIMIT 23";
     return dbSelectAll($sql);
 }
-?> 
+
+
+?>

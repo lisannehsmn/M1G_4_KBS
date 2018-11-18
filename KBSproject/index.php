@@ -13,8 +13,8 @@
                         <ul class="list-group list-group-flush text-center">
                             <h6 class="card-title list-group-item"><?php echo $row["StockItemName"]; ?></h6>
                             <h7 class="list-group-item"> Prijs: <?php echo '€'.$row["RecommendedRetailPrice"].' euro'; ?></h7><hr>
-                            <a class="btn btn-success button-style" href="cartAction.php?action=addToCart&id=<?php echo $row["StockItemID"]; ?>">In winkelmand</a>
-                            <a class="btn btn-info button-style" href="detail.php?action=&id=<?php echo $row["StockItemID"]; ?>">Details</a>
+                            <a class="btn btn-success button-style" href="cartAction.php?action=addToCart&StockItemID=<?php echo $row["StockItemID"]; ?>">In winkelmand</a>
+                            <a class="btn btn-info button-style" href="detail.php?action=&StockItemID=<?php echo $row["StockItemID"]; ?>">Details</a>
                         </ul>
                     </div>
                 </div>
