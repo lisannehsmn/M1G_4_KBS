@@ -64,7 +64,7 @@ include 'connect.php';
         </nav>
         <?php
         //query statment 
-$id = $_GET['id']; //Hiermee haal je $id uit get
+$id = $_GET['StockItemID']; //Hiermee haal je $id uit get
 $query = $connect->query("SELECT * FROM stockitems WHERE StockItemID = $id"); //Hiermee pak je product
         if($query->num_rows > 0){ 
             while($row = $query->fetch_assoc()){
@@ -77,7 +77,7 @@ $query = $connect->query("SELECT * FROM stockitems WHERE StockItemID = $id"); //
     </div>
 <div class="beschrijving">
     <p class="desc"><?php echo $row["MarketingComments"]?></p>
-    <a class="btn btn-success" href="cartAction.php?action=addToCart&id=<?php echo $row["StockItemID"]; ?>">In winkelmand</a></div>
+    <a class="btn btn-success" href="cartAction.php?action=addToCart&StockItemID=<?php echo $row["StockItemID"]; ?>">In winkelmand</a></div>
     </div> 
 
             <?php } }else{ ?>
