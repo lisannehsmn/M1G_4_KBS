@@ -29,18 +29,6 @@ include ("header.php");
                 font-size: 16px;
                 line-height: 2px;
             }
-            .popup {
-                margin: 75px auto;
-                padding: 20px;
-                background: #fff;
-                border: 1px solid #666;
-                width: 300px;
-                box-shadow: 0 0 50px rgba(0,0,0,0.5);
-                position: relative;
-          .light & {
-                border-color: #aaa;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-          }
         </style>
 
 
@@ -48,7 +36,7 @@ include ("header.php");
         <div class="row">
         <div class="col-md-6 box1">
             <h4>Inloggen</h4>
-            <p>Bestaande klanten</p>
+            <p>Log in als een bestaande klant</p>
             <form method ="post" name="login">
             <div class="input-group mb-3">
             <div class="input-group-prepend"><span class="input-group-text" id="email">Email</span></div>
@@ -70,7 +58,7 @@ include ("header.php");
         <div class="col-md-6 box2">
             <form method="post" name="register">
             <h4>Nieuw bij wwi.nl?</h4>
-            <p>Maak binnen 2 minuten een account aan.</p>
+            <p>Maak hier een account aan</p>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                     <span class="input-group-text" for="name">Volledige naam*</span>
