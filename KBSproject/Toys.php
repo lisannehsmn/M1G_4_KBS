@@ -1,34 +1,29 @@
 <?php include 'header.php';?>
-        <div class="container">
-              <div id="products" class="row list-group">
+<div class="container">
+    <a href="viewCart.php" class="cart-link" title="View Cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+    <div id="products" class="row">
         <?php
         $query = $connect->query("SELECT * FROM (stockitems i JOIN stockitemstockgroups ig ON i.StockItemID = ig.StockItemID)JOIN stockgroups g ON ig.StockGroupID = g.StockGroupID WHERE StockGroupName='Toys' ");
-        if($query->num_rows > 0){ 
-            while($row = $query->fetch_assoc()){
-        ?>
-        <div class="item col-lg-4">
-            <div class="thumbnail">
-                <div class="caption">
-                    <h4 class="list-group-item-heading"><?php echo $row["StockItemName"]; ?></h4>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="lead"><?php echo '€'.$row["RecommendedRetailPrice"].' Euro'; ?></p>
-                        </div>
-                        <div class="col-md-6">
-                            <a class="btn btn-success" href="cartAction.php?action=addToCart&id=<?php echo $row["StockItemID"]; ?>">In winkelmand</a>
-                        </div>
-                        <div class="col-md-6">
-                          <a class="btn btn-info" href="detail.php?action=&id=<?php echo $row["StockItemID"]; ?>">Details</a>
-                        </div>
+        if($query->num_rows > 0){while($row = $query->fetch_assoc()){
+            ?>
+            <div class="item col-lg-4">
+                <div class="thumbnail">
+                    <img class="card-img-top" src="https://via.placeholder.com/277x180" alt="Card image cap">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush text-center">
+                            <h6 class="card-title list-group-item"><?php echo $row["StockItemName"]; ?></h6>
+                            <h7 class="list-group-item"> Prijs: <?php echo '€'.$row["RecommendedRetailPrice"].' euro'; ?></h7><hr>
+                            <a class="btn btn-success button-style" href="cartAction.php?action=addToCart&id=<?php echo $row["StockItemID"]; ?>">In winkelmand</a>
+                            <a class="btn btn-info button-style" href="detail.php?action=&id=<?php echo $row["StockItemID"]; ?>">Details</a>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
         <?php } }else{ ?>
-        <p>Product (en) niet gevonden .....</p>
+            <p>Product (en) niet gevonden .....</p>
         <?php } ?>
     </div>
-            </div>
+</div>
         <footer class="footer small text-center">
             <div class="footer">
                 Copyright © Wide World Importers 2018

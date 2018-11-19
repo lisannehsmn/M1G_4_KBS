@@ -29,8 +29,7 @@ if (isset($_POST['register_btn'])){
     }
     if (empty($address)){
         array_push($errors, "Adres is verplicht");
-    }
-    
+    }    
     //Registreer gebruiker bij 0 errors:
     if (count($errors)==0){
         $password = md5($password); //Hash <--

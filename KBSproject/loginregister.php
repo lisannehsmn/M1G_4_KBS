@@ -29,6 +29,18 @@ include ("header.php");
                 font-size: 16px;
                 line-height: 2px;
             }
+            .popup {
+                margin: 75px auto;
+                padding: 20px;
+                background: #fff;
+                border: 1px solid #666;
+                width: 300px;
+                box-shadow: 0 0 50px rgba(0,0,0,0.5);
+                position: relative;
+          .light & {
+                border-color: #aaa;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+          }
         </style>
 
 

@@ -1,6 +1,7 @@
 <?php include 'header.php';?>
-        <div class="container">
-            <div id="products" class="row list-group">
+<div class="container">
+    <a href="viewCart.php" class="cart-link" title="View Cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+    <div id="products" class="row">
                 <?php
 
                 $query = $connect->query("SELECT * FROM stockitems where StockItemName LIKE '%". $_GET['search'] ."%' ");
