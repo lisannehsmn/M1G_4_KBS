@@ -34,7 +34,6 @@
             .item{
                 padding: 20px 0;
             }
-
         </style>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
@@ -78,7 +77,7 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" name="search" method="get" action="searchresults.php">
-                <input class="form-control mr-sm-2" name="search" value="" placeholder="Zoek product"/>
+                <input class="form-control mr-sm-2" name="search" value="search"/>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" action="searchresults.php" value="search">Search</button>
             </form>
         </div>

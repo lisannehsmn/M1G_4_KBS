@@ -79,7 +79,6 @@ class Cart {
             if (!isset($item['rowid'], $this->cart_contents[$item['rowid']])){
                 return FALSE;
             }else{
-                // bereid de hoeveelheid voor
                 if(isset($item['qty'])){
                     $item['qty'] = (float) $item['qty'];
                 // haal het item uit het winkelwagentje, als de hoeveelheid nul is

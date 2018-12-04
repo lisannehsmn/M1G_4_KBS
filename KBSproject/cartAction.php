@@ -8,13 +8,13 @@ include 'connect.php';
 if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
     if($_REQUEST['action'] == 'addToCart' && !empty($_REQUEST['StockItemID'])){
         $productID = $_REQUEST['StockItemID'];
-        // ontvang productdetails
         $query = $connect->query("SELECT * FROM stockitems WHERE StockItemID = ".$productID);
         $row = $query->fetch_assoc();
         $itemData = array(
             'StockItemID' => $row['StockItemID'],
             'name' => $row['StockItemName'],
             'price' => $row['RecommendedRetailPrice'],
+            'korting' =>$row['korting'],
             'qty' => 1
         );
         
