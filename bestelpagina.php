@@ -3,8 +3,8 @@ include 'Cart.php';
 $cart = new Cart;?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
+	<head>
+	 	<meta charset="UTF-8">
         <title></title>
         <style>
             .button-style
@@ -20,7 +20,7 @@ $cart = new Cart;?>
               font-size: 17px;
               color:white;
             }
-            .container{
+			.container{
                 padding: 50px;}
             .cart-link{
                 width: 100%;
@@ -65,7 +65,7 @@ $cart = new Cart;?>
                     <a class="nav-link text-white" href="index.php">PRODUCTEN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="loginregister.php">INLOGGEN</a>
+                    <a class="nav-link text-white" href="Login.php">INLOGGEN</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="viewCart.php">WINKELWAGEN</a>
@@ -100,9 +100,10 @@ $cart = new Cart;?>
     <thead>
         <tr>
             <th>Producten</th>
-            <th><left>Prijs</left></th>
-            <th><center>Aantal</center></th>
-            <th><center>Subtotaal</center></th>
+            <th>Prijs</th>
+            <th>Aantal</th>
+            <th>Subtotaal</th>
+            <th>&nbsp;</th>
         </tr>
     </thead>
     <tbody>
@@ -112,37 +113,28 @@ $cart = new Cart;?>
             $cartItems = $cart->contents();
             foreach($cartItems as $item){
         ?>
-		
-        <tr>
+		<tr>
             <td><?php echo $item["name"]; ?></td>
-            <td><left><?php echo '€'.$item["price"]; ?></left></td>
-			<td><center><?php echo $item["qty"]; ?></center></td>
-            <td><center><?php echo '€'.$item["subtotal"]; ?></center></td>			
-		</tr>
+            <td><?php echo '€'.$item["price"].' EURO'; ?></td>
+            <td><input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
+            <td><?php echo '€'.$item["subtotal"].' EURO'; ?></td>
+            <td>
+                <a href="cartAction.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Weet je het zeker?')"><i class="glyphicon glyphicon-trash"></i></a>
+            </td>
+        </tr>
         <?php } }else{ ?>
         <tr><td colspan="5"><p>Je winkelwagen is leeg...</p></td>
         <?php } ?>
     </tbody>
-		
     <tfoot>
         <tr>
             <td><a href="viewCart.php" class="btn btn-success btn-block"><i class="glyphicon glyphicon-menu-left"></i>Terug naar winkelwagen</a></td>
-            <td colspan="0"></td>
+            <td colspan="2"></td>
             <?php if($cart->total_items() > 0){ ?>
-            <td class="text-right"><strong>Totaal <?php echo '€'.$cart->total(); ?></strong></td> 
-            <td><a href="https://www.iDeal.nl" class="btn btn-success btn-block">afronden <i class="glyphicon glyphicon-menu-right"></i></a></td>
+            <td class="text-center"><strong>Total <?php echo '€'.$cart->total().' EURO'; ?></strong></td>
+            <td><a href="iDeal.nl" class="btn btn-success btn-block">Afronden <i class="glyphicon glyphicon-menu-right"></i></a></td>
             <?php } ?>
         </tr>
-		
-		<?php
-        $query = $connect->query("SELECT * FROM users WHERE name='Jelle Mol'");
-        if($query->num_rows > 0){
-			while($row = $query->fetch_assoc()){
-        ?>
-		<h6 class="card-title list-group-item"> Naam: <?php echo $row["name"]; ?></h6>
-		<h6 class="card-title list-group-item"> Contact: <?php echo $row["email"];?> <?php if ($row["number"]!=NULL){ ?>telefoon: <?php echo $row["number"]; }?></h6>
-		<h6 class="card-title list-group-item"> Adres: <?php echo $row["address"]; ?></h6>
-		<?php } }?>
     </tfoot>
     </table>
 </div>
